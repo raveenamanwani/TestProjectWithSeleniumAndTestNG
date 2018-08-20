@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+  
+<suite name="Free CRM App Test Suite" thread-count="2">
+  <test name="Free CRM App test Cases" >
+    <classes>
+      <class name="com\appname\qa\testcases\LoginPageTest"/>  
+      <class name="com\appname\qa\testcases\HomePageTest."/>  
+    </classes>
+  </test>
+</suite>
