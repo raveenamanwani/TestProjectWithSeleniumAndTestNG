@@ -24,11 +24,6 @@ public class ContactsPage extends TestBase{
 	WebElement SaveBtn;
 	
 	
-	
-	
-
-	
-	
 	public void ContactsPage() {
 		PageFactory.initElements(driver, this); 
 	}
@@ -38,9 +33,9 @@ public class ContactsPage extends TestBase{
 		Select select = new Select(driver.findElement(By.name("title")));
 		select.selectByVisibleText(title);
 		
-		
-		firstName.sendKeys();
-		lastName.sendKeys();
+		firstName.sendKeys(fName);
+		lastName.sendKeys(lName);
+		company.sendKeys(comp);
 		SaveBtn.click();
 		
 	}

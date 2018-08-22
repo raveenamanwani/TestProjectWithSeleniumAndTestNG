@@ -9,53 +9,46 @@ import com.appname.qa.base.TestBase;
 
 public class HomePage extends TestBase {
 
-	@FindBy(xpath="//td[contains(text(), 'User: Raveena Manwani')]")
+	@FindBy(xpath = "//td[contains(text(), 'User: Raveena Manwani')]")
 	WebElement UserNameLabel;
-	
-	
-	@FindBy(xpath="//a[@title='Contacts']")
+
+	@FindBy(xpath = "//a[@title='Contacts']")
 	WebElement ContactsLink;
-	
-	@FindBy(xpath="//a[contains(text(), 'New Contact']")
+
+	@FindBy(xpath = "//a[contains(text(), 'New Contact']")
 	WebElement NewContactsLink;
-	
-	@FindBy(xpath="//a[@title='Deals']")
+
+	@FindBy(xpath = "//a[@title='Deals']")
 	WebElement DealsLink;
-	
-	
-	//constructor of Home Page
-	
+
+	// constructor of Home Page
+
 	public void HomePage() {
-		PageFactory.initElements(driver, this); 
+		PageFactory.initElements(driver, this);
 	}
-	
-	
+
 	public String verifyHomePageTitle() {
 		return driver.getTitle();
 	}
-	
+
 	public boolean verifyUserName() {
 		return UserNameLabel.isDisplayed();
 	}
-	
+
 	public ContactsPage clickOnContactsLink() {
 		ContactsLink.click();
 		return new ContactsPage();
 	}
-	
+
 	public DealsPage clickOnDealsLink() {
 		ContactsLink.click();
 		return new DealsPage();
-		
+
 	}
-	
+
 	public void clickOnNewContactsLink() {
 		Actions action = new Actions(driver);
 		action.moveToElement(ContactsLink).build().perform();
-		NewContactsLink.click();
-		
-	}
-	
-	
+}
 	
 }
